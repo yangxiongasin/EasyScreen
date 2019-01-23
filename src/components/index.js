@@ -1,6 +1,6 @@
-import qmcIdentify from './identify/index.js'
+import esIdentify from './identify/index.js'
 let components = {
-  qmcIdentify
+  esIdentify
 }
 
 const install = function (Vue, opts = {}) {

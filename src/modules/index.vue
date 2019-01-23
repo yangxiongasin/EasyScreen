@@ -2,7 +2,7 @@
   <div class="layout layout--one-screen bg-gray-lightest-5">
     <div :class="['menu-backdrop', {'show': isOpen===true}]" @click="closeSidebar"></div>
     <div :class="['layout-sidebar bg-gray-darker show',{'layout-sidebar--folded': isOpen===false}]">
-      <router-link :to="{ name: 'project-management' }" class="layout-logo-left">
+      <router-link :to="{ name: 'home' }" class="layout-logo-left">
         <img src="../assets/images/logo-white.png" alt="" class="layout-logo-img" width="22">
         <span class="text-base text-white align-middle ml-12 layout-logo-text">EasyScreen</span>
       </router-link>
@@ -44,7 +44,7 @@
         </t-dropdown>
       </nav>
 
-      <div class="layout-main" style="top: 60px; bottom: 0;">
+      <div class="layout-main" style="top: 60px; bottom: 0; background: #f00">
         <router-view></router-view>
       </div>
     </div>

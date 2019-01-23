@@ -6,7 +6,7 @@
       <div class="user-form-box">
         <h2 class="text-center mb-5 text-xxl">
           <img src="../assets/images/login-logo.png" alt="" style="height: 35px;">
-          企业开源软件管理
+          Easy Screen
         </h2>
         <t-form ref="loginForm" :model="formData" :rules="loginFormrules">
           <t-form-item prop="userName">
@@ -21,7 +21,7 @@
             <t-input v-model="formData.verify" placeholder="请输入验证码">
               <!--<img src="../../assets/images/code.png" style="height:38px; margin: 0 -12px;"/>-->
               <div slot="append" style="height:38px; margin: 0 -12px;" @click="refreshCode">
-                <qmc-identify :identify-code="identifyCode"></qmc-identify>
+                <es-identify :identify-code="identifyCode"></es-identify>
               </div>
             </t-input>
           </t-form-item>
@@ -134,7 +134,7 @@ export default {
                   vm.$router.push({path: result})
                 }
               } else {
-                vm.$router.push({name: 'workplace'})
+                vm.$router.push({name: 'home'})
               }
             } else {
               vm.$Message.danger(res.data.data.message)

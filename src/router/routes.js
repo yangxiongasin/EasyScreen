@@ -30,13 +30,13 @@ export default [
     component: require('../modules/index.vue'),
     children: [
       {
-        name: 'workplace',
-        path: '/workplace',
+        name: 'home',
+        path: '/home',
         meta: {
-          title: '我的工作台',
+          title: '首页',
           isMenu: true
         },
-        component: require('../modules/workplace/index.vue')
+        component: require('../modules/home/index.vue')
       }
     ]
   }
