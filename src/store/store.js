@@ -29,13 +29,6 @@ const store = new Vuex.Store({
     setLoginInfo (state, data) {
       state.loginInfo = data
       localStorage.setItem('loginInfo', JSON.stringify(data))
-    },
-    setApprovalData (state, data) {
-      state.approvalData = data
-      localStorage.setItem('approvalData', JSON.stringify(data))
-    },
-    setApproFinParams (state, data) {
-      state.approvalFinishParams = data
     }
   },
   getters: {
@@ -71,18 +64,6 @@ const store = new Vuex.Store({
       }
       if (state.loginInfo && state.loginInfo !== null) {
         return state.loginInfo
-      } else {
-        return cacheData
-      }
-    },
-    getApprovalData (state) {
-      const cache = localStorage.getItem('approvalData')
-      let cacheData = null
-      if (cache) {
-        cacheData = JSON.parse(cache)
-      }
-      if (state.approvalData && state.approvalData !== null) {
-        return state.approvalData
       } else {
         return cacheData
       }

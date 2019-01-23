@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="chart-container">
-      {{ a }}
+      <t-button @click="$pbulicFunc.fullScreen('.layout-main')">全屏</t-button>
     </div>
   </div>
 </template>
@@ -10,7 +10,6 @@
 export default {
   data() {
     return {
-      a: '1'
     }
   },
   computed: {
