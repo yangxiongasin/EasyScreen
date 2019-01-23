@@ -1,0 +1,18 @@
+{
+  "code": 200,
+  "message": "",
+  "data": {
+    "secHighCount": 10,
+    "secMediumCount": 9,
+    "secLowCount": 1,
+    "licenseHighCount": 4,
+    "licenseMediumCount": 11,
+    "licenseLowCount": 33,
+    "operationalHighCount": 6,
+    "operationalMediumCount": 6,
+    "operationalLowCount": 46,
+    "bugHighCount": 0,
+    "bugMediumCount": 0,
+    "bugLowCount": 0
+  }
+}

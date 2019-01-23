@@ -1,0 +1,139 @@
+// 新版本信息变更图例
+.legend {
+  &::before {
+    display: inline-block;
+    width: 21px;
+    height: 6px;
+    margin-right: 8px;
+    content: "";
+    background: #ffab00;
+  }
+}
+
+// 新版本信息
+.apply-version {
+  .change-item {
+    position: relative;
+    &::after {
+      position: absolute;
+      bottom: 3px;
+      display: block;
+      width: 100%;
+      height: 6px;
+      content: "";
+      background: rgba(255,171,0,.45);
+    }
+  }
+}
+
+// 变更详情
+.fixed-details {
+  .steps-tail {
+    background-color: $gray-lightest-18 !important;
+  }
+
+  .steps-item {
+    .steps-icon {
+      visibility: hidden;
+      &::before {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,0);
+        @extend %aid-icon;
+        visibility: visible;
+      }
+    }
+    .steps-main__title {
+      color: $gray-dark;
+    }
+    &.newOperation {
+      .steps-head__inner {
+        background: $brand-success;
+        border-color: $brand-success;
+        .steps-icon {
+          color: #fff;
+          &::before {
+            content: "\F666";
+          }
+        }
+      }
+    }
+    &.delOperation {
+      .steps-head__inner {
+        background: $brand-danger;
+        border-color: $brand-danger;
+        .steps-icon {
+          color: #fff;
+          &::before {
+            content: "\F2B5";
+          }
+        }
+      }
+    }
+    &.updateOperation {
+      .steps-head__inner {
+        background: $brand-info;
+        border-color: $brand-info;
+        .steps-icon {
+          color: #fff;
+          &::before {
+            content: "\F1F7";
+          }
+        }
+      }
+    }
+  }
+}
+
+// 审批记录，历史变更
+.history-version,
+.approval-record {
+  .timeline__item-tail {
+    left: 12px;
+  }
+  &__icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 24px;
+    color: $gray;
+    text-align: center;
+    background: $gray-lightest-5;
+    border: 1px solid $gray-lightest-18;
+    border-radius: 50%;
+  }
+  .timeline__item-content {
+    padding-left: 40px;
+  }
+  .timeline__item-content-title {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+.approval-content-left,
+.chat-container--pages {
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+}
+
+.project-approval-scroll {
+  flex-grow: 0;
+  overflow: auto;
+}
+
+.project-fixed-scroll {
+  flex-grow: 1;
+  overflow: hidden;
+
+  .fixed-details,
+  .fixed-timeline {
+    height: calc(100% - 42px);
+    overflow: auto;
+  }
+}
+

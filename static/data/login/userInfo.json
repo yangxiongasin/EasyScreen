@@ -1,0 +1,21 @@
+{
+  "code": 200,
+  "message": "",
+  "data": {
+    "userId": 1,
+    "userCode": "admin",
+    "userName": "管理员",
+    "userDesc": "系统管理员",
+    "email": "luxiang@asiainfo.com",
+    "phone": "13382008212",
+    "photo": "http://10.1.234.29:8088/img/man21531582231245.png",
+    "createTime": 1531238400000,
+    "state": 1,
+    "passwd": "123456",
+    "userType": "",
+    "isTc": "",
+    "isAdmin": "Y",
+    "isPm": "",
+    "doneDate": ""
+  }
+}

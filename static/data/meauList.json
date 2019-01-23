@@ -1,0 +1,37 @@
+{
+  "code": 200,
+  "message": "",
+  "data": [
+    {
+      "menuId": 1,
+      "menuName": "首页",
+      "menuType": 1,
+      "url": "workplace",
+      "icon": "home-variant",
+      "menuLevel": "1",
+      "parentMenuId": "",
+      "childrenMenuList": ""
+    },
+    {
+      "menuId": 2,
+      "menuName": "电力系统",
+      "menuType": 0,
+      "url": "",
+      "icon": "cloud",
+      "menuLevel": "1",
+      "parentMenuId": "",
+      "childrenMenuList": [
+        {
+          "menuId": 21,
+          "menuName": "全电景区",
+          "menuType": 0,
+          "url": "security-hole",
+          "icon": "newspaper",
+          "menuLevel": "2",
+          "parentMenuId": 7,
+          "childrenMenuList": ""
+        }
+      ]
+    }
+  ]
+}

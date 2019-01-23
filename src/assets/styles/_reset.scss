@@ -1,0 +1,107 @@
+/**
+ * 本文件是项目重置 aidesign 样式
+**/
+.breadcrumb{
+  padding: 0;
+  .breadcrumb__item{
+    font-size: 12px;
+    color: #4b5461;
+  }
+  .breadcrumb__item.active{
+    color: #24272b;
+  }
+}
+
+
+.card,
+.card:hover {
+  border: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
+}
+
+.popover {
+  z-index: 1060 !important;
+}
+
+.addSoftware .form-group__label{
+  font-size: 12px;
+}
+
+.transf .form-group__label{
+  color: #fff;
+}
+
+.avatar img {
+  height: 100%;
+}
+
+/* 弹窗头部 */
+.modal-header {
+  background: #fff;
+  border-bottom: 1px solid $gray-lightest-18;
+  .modal-title {
+    color: $gray-dark;
+  }
+  .close {
+    font-size: 24px;
+    color: $gray;
+    &:hover {
+      color: $gray-dark;
+    }
+  }
+}
+
+.img-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 67px;
+  height: 67px;
+  flex-shrink: 0;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+/* 弹窗底部按钮居中 */
+.modal--button-center {
+  .modal-footer {
+    justify-content: center;
+    padding-top: 16px;
+    background-color: #fcfcfc;
+    border-top: 1px solid #e6eaed;
+  }
+}
+
+.pagination {
+  margin-bottom: 0;
+}
+
+.tag {
+  height: 20px;
+  line-height: 20px;
+
+  &__title {
+    transform: scale(.84);
+    transform-origin: 50%;
+  }
+}
+
+.input-group {
+  align-items: center;
+}
+
+.abnormal-button,
+.addSoftware{
+  .table__cell{
+    .btn{
+      height: 20px;
+      line-height: 20px;
+    }
+  }
+}
+
+textarea.input{
+  resize: none;
+}

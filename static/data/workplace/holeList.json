@@ -1,0 +1,48 @@
+{
+  "code": 200,
+  "message": "",
+  "data": [
+    {
+      "msgId": 3,
+      "msgName": "IBM Rational Rhapsody Design Manager",
+      "msgContent": "Design Manager 安全漏洞CVE-2018-10871",
+      "osName": "",
+      "osVersion": "",
+      "osVersionDesc": "",
+      "company": "",
+      "publishDate": "2018-08-14 10:00:50",
+      "holeName": "Design Manager 安全漏洞",
+      "holeType": "",
+      "holeCve": "CVE-2018-10874",
+      "holeCnnvd": "CNNVD-2018-10872",
+      "degree": "中危",
+      "holeDesc": "IBM Rational Software Architect（RSA）Design Manager和Rational Rhapsody Design Manager都是美国IBM公司的产品。RSA Design Manager是一套基于Jazz技术的协作式软件设计和开发平台。Rational Rhapsody Design Manager是一款通过中心设计存储库对设计和模型进行存储、共享、搜索和管理的软件。",
+      "reference": "BM Rational Rhapsody Design Manager和IBM RSA Design Manager中存在安全漏洞。攻击者可借助技术性的错误信息利用该漏洞获取应用程序和数据库的信息。",
+      "solution": "目前厂商已发布升级补丁以修复漏洞，补丁获取链接：",
+      "refOsName": "Kafka",
+      "refOsVersion": "1.0",
+      "mailState": "1"
+    },
+    {
+      "msgId": 4,
+      "msgName": "PHPCMS 安全漏洞",
+      "msgContent": "该漏洞源于PHPCMS程序在下载远程/本地文件时没有对文件的类型做正确的效验",
+      "osName": "",
+      "osVersion": "",
+      "osVersionDesc": "",
+      "company": "",
+      "publishDate": "2018-08-14 10:09:40",
+      "holeName": "PHPCMS 安全漏洞",
+      "holeType": "",
+      "holeCve": "CVE-2018-10875",
+      "holeCnnvd": "CNNVD-2018-10871",
+      "degree": "高危",
+      "holeDesc": "PHPCMS 9.6.0版本中的libs\\classes\\attachment.class.php文件存在安全漏洞，该漏洞源于PHPCMS程序在下载远程/本地文件时没有对文件的类型做正确的效验。远程攻击者可利用该漏洞上传并执行任意的PHP代码",
+      "reference": "PHPCMS是中国盛大网络（Shanda）公司的一套基于PHP和Mysql架构的网站内容管理系统。该系统包括新闻、图片、下载、信息、产品等模块。",
+      "solution": "目前厂商已发布升级补丁以修复漏洞，详情请关注厂商主页：",
+      "refOsName": "ActiveMQ",
+      "refOsVersion": "2.0",
+      "mailState": "1"
+    }
+  ]
+}

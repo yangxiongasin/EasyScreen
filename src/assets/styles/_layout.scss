@@ -1,0 +1,72 @@
+/**
+ * 本文件是项目布局样式
+**/
+//
+// horizontal-container
+// 左右结构布局外层父容器
+.horizontal-container {
+  height: 100%; // 42为面包屑高度
+}
+
+//
+// catalog-sidebar
+// 左侧布局容器
+
+.catalog-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  height: 100%;
+
+  .card-block {
+    height: 100%;
+    overflow: auto;
+    @extend %transparent-scroll;
+  }
+}
+
+//
+// main-right
+// 右侧布局容器
+.main-right {
+  height: 100%;
+  overflow: auto;
+  @extend %transparent-scroll;
+}
+
+
+//
+// medium-container
+// 全屏背景，内容居中容器
+
+.medium-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+//
+// header-toolbar
+// 头部工具栏
+
+.header-toolbar {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+
+  &__title {
+    white-space: nowrap;
+    flex-shrink: 0;
+    font-weight: 500;
+  }
+}
+

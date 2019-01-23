@@ -1,0 +1,527 @@
+/**
+ * 本文件是项目定义可复用组件样式
+**/
+
+// ===================== 组件类 ======================
+
+//
+//
+// catalog-list
+//
+
+.catalog-list {
+  padding: 0;
+  margin: 0;
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px 20px;
+    margin: 0 -20px;
+    overflow: hidden;
+    cursor: pointer;
+    border-right: 3px solid transparent;
+
+    .toolbar__trigger {
+      padding: 6px 0;
+      visibility: hidden;
+    }
+
+    @include hover {
+      background: $list-hover-bg;
+      .toolbar__trigger {
+        visibility: visible;
+      }
+    }
+
+    &--active {
+      background: $list-active-bg;
+      border-right-color: $brand-primary;
+      @include hover {
+        background: $list-active-bg;
+      }
+    }
+    .catelog-list__remark {
+      width: 160px;
+    }
+    .avatar {
+      flex-shrink: 0;
+    }
+  }
+
+  &--single-line {
+    .catalog-list__item {
+      display: block;
+      height: 36px;
+      padding-top: 0;
+      padding-bottom: 0;
+      overflow: hidden;
+      line-height: 36px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+//
+// toolbar__trigger
+// 增加图标的可点击范围
+
+.toolbar__trigger {
+  position: relative;
+  display: inline-block;
+  padding: 6px;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.15s ease-in;
+  flex-shrink: 0;
+
+  .aid-filter-outline {
+    line-height: 1;
+    color: $gray-dark;
+  }
+
+  &:hover {
+    background: transparent;
+    .aid-filter-outline {
+      color: $brand-primary;
+    }
+  }
+}
+
+//
+// icon-circle-group
+// 圆形背景图标组
+.icon-circle-group {
+  white-space: nowrap;
+  img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    & + img {
+      margin-left: -20px;
+    }
+  }
+}
+
+//
+// 申请弹框
+//
+.application-modal {
+  .modal-body,
+  .modal-footer {
+    padding: 0;
+  }
+  .modal-footer {
+    border-top: 1px solid $gray-lightest-18;
+  }
+  .modal-body {
+    overflow: hidden;
+
+    // 应用信息样式
+    dl {
+      margin-bottom: 12px;
+      dt {
+        margin-right: 4px;
+        color: $gray;
+      }
+    }
+
+    .application-info,
+    .chat-container {
+      height: calc(100vh - 30px * 2 - 150px);
+    }
+
+    .application-info {
+      overflow: auto;
+    }
+  }
+}
+
+// 申请成功提示信息
+.application-apply-tips {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+//
+//
+// 聊天窗口
+.chat-container {
+  display: flex;
+  flex-direction: column;
+
+  .chat-answerer,
+  h6,
+  .chat-input {
+    flex-shrink: 0;
+  }
+
+  // 聊天内容
+  .chat-records {
+    flex-grow: 1;
+    overflow: auto;
+
+    .chat-content {
+      padding: 16px 20px;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    // 问者框
+    .chat-question {
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      padding-left: 40px;
+      dt {
+        padding-bottom: 25px;
+        margin-left: 20px;
+      }
+
+      .chat-content {
+        background: #5e9ffb;
+        border-radius: 15px 15px 0;
+      }
+
+      .chat-time {
+        text-align: right;
+      }
+    }
+
+    // 答者框
+    .chat-reply {
+      align-items: flex-end;
+      padding-right: 40px;
+      dt {
+        padding-bottom: 25px;
+        margin-right: 20px;
+      }
+
+      .chat-content {
+        color: $gray-dark;
+        background: transparent;
+        border: 1px solid $gray-lightest-18;
+        border-radius: 15px 15px 15px 0;
+      }
+    }
+  }
+
+  // 输入框
+  .chat-input .input {
+    border: 0;
+    border-top: 1px solid $gray-lightest-18;
+    border-radius: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.application-zindex {
+  .modal-backdrop,
+  .modal {
+    z-index: 1039 !important;
+  }
+}
+
+//
+// software-list
+// 软件列表
+.software-list {
+  dt {
+    flex-shrink: 0;
+  }
+
+  .aid-close-circle {
+    visibility: hidden;
+  }
+
+  dl {
+    position: relative;
+    &:hover {
+      border-color: transparent;
+      box-shadow: 0 5px 20px 0 rgba(46, 104, 208, 0.1);
+    }
+  }
+
+  &--with-close {
+    .software-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    dl:hover {
+      .aid-close-circle {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+// 带新版本提示信息
+.software--with-tips {
+  dt {
+    position: relative;
+  }
+
+  .software__tips {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 12px;
+    white-space: nowrap;
+    transform: translate(-50%, 0) scale(0.8);
+  }
+}
+
+//
+// 开软知识库查询列表中查看安全漏洞弹窗
+// hole-modal
+.hole-modal {
+  margin-top: 100px;
+  .modal-body {
+    height: calc(100vh - 100px * 2 - 56px);
+    padding: 0;
+  }
+  .modal-footer {
+    padding: 0;
+  }
+
+  .catalog-sidebar--hole {
+    width: 240px;
+    .catalog-list {
+      flex: 1;
+      overflow: auto;
+    }
+  }
+}
+
+// 开软知识库查询版本下拉框样式
+.version-dropdown {
+  display: flex;
+  align-items: center;
+  color: $gray-dark;
+  .aid-arrow-down-drop {
+    display: inline-block;
+    transform: rotate(-90deg);
+  }
+}
+
+.popover--open {
+  .version-dropdown {
+    color: $brand-primary;
+    .aid-arrow-down-drop {
+      display: inline-block;
+      transform: rotate(0);
+    }
+  }
+}
+
+.new-version-tag {
+  display: inline-block;
+  padding: 0 5px;
+  margin-left: 8px;
+  font-size: 12px;
+  color: #fff;
+  background: #ff5230;
+  border-radius: 4px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  transform: skew(-8deg) scale(0.84);
+  ins {
+    display: inline-block;
+    text-decoration: none;
+    transform: skew(8deg) scale(0.84);
+  }
+}
+
+//
+// chart
+// 图表
+.chart-container {
+  padding-right: 24px;
+  padding-left: 24px;
+
+  [class^='col'] {
+    margin-bottom: 24px;
+  }
+
+  .card {
+    height: 100%;
+  }
+  .card-header {
+    padding: 20px 20px 0;
+    white-space: nowrap;
+    background: #fff;
+    line-height: 1;
+  }
+
+  .chart-tab {
+    white-space: nowrap;
+    &-item {
+      display: inline-block;
+      font-size: 12px;
+      line-height: 20px;
+      color: $gray;
+      border-bottom: 2px solid transparent;
+
+      &:not(:first-child) {
+        margin-left: 16px;
+      }
+
+      &--current {
+        color: $brand-primary;
+        border-color: $brand-primary;
+      }
+    }
+  }
+
+  .splitter-vertical--chart {
+    top: 20px;
+    bottom: 20px;
+    height: auto;
+  }
+}
+
+// ===================== 原子类 ======================
+
+// 垂直分割线
+.splitter {
+  display: inline-block;
+  width: 1px;
+  height: 20px;
+  margin: 0 12px;
+  vertical-align: middle;
+  background: $gray-lightest-10;
+}
+
+.border {
+  border: 1px solid $gray-lightest-18;
+}
+.border-top {
+  border-top: 1px solid $gray-lightest-18;
+}
+
+.border-right {
+  border-right: 1px solid $gray-lightest-18;
+}
+
+.border-top {
+  border-top: 1px solid $gray-lightest-18;
+}
+
+.border-left {
+  border-left: 1px solid $gray-lightest-18;
+}
+
+.link-btn {
+  display: inline-block;
+  height: 20px;
+  padding: 0 16px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background: $brand-primary;
+  border-radius: 4px;
+  transform: scale(0.84);
+  transform-origin: 0 0;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.bg-primary-translucency {
+  background: rgba($brand-primary, 0.1);
+}
+
+.bg-danger-translucency {
+  background: rgba($brand-danger, 0.1);
+}
+
+.bg-success-translucency {
+  background: rgba($brand-success, 0.1);
+}
+
+.bg-warning-translucency {
+  background: rgba($brand-warning, 0.1);
+}
+
+.bg-info-translucency {
+  background: rgba($brand-info, 0.1);
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+.not-grow {
+  flex-grow: 0;
+}
+.not-shrink {
+  flex-shrink: 0;
+}
+.border-dashed {
+  border-style: dashed;
+}
+
+.card--full {
+  height: calc(100% - 56px); // 56: 分页高度 40:面包屑高度
+  padding-bottom: 24px;
+  overflow: hidden;
+
+  .table-wrapper {
+    overflow: auto;
+  }
+}
+
+// 查看更多
+.show-one-line {
+  max-height: 16px;
+  overflow: hidden;
+}
+.show-two-line {
+  max-height: 32px;
+  overflow: hidden;
+}
+.show-more-line {
+  max-height: auto;
+}
+
+.bg-gray-lightest {
+  background: #fcfcfc;
+}
+.bg-green-safe {
+  background-color: #67c23a;
+}
+.table-scroll-wrapper {
+  width: 100%;
+  height: calc(100% - 70px);
+  overflow: auto;
+  .table-wrapper {
+    overflow: visible;
+  }
+  .table {
+    overflow: visible;
+  }
+}
+.table-model-scroll-wrapper {
+  width: 100%;
+  height: calc(100% - 124px);
+  overflow: auto;
+  .table-wrapper {
+    overflow: visible;
+  }
+  .table {
+    overflow: visible;
+  }
+}
+
+.addSoftwareModal .modal-body {
+  height: calc(100vh - 30px * 2 - 150px) !important;
+}
