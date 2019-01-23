@@ -54,83 +54,22 @@ const PBULICFUNC = {
     return newObj
   },
 
-  /* by yangxiong 验证规则 */
-
-  /* 证件号码验证 */
-  validateNumLet (rule, value, callback) {
-    let numZimu = /^[0-9a-zA-Z]*$/g
-    let format = numZimu.test(value)
-    if (!format) {
-      callback(new Error('号码只能为数字或字母'))
-    } else {
-      callback()
+  fullScreen (elem) {
+    let el = document.querySelectorAll(elem)[0]
+    let rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen
+    if (typeof rfs !== 'undefined' && rfs) {
+      rfs.call(el)
     }
   },
-
-  /* 数字验证 */
-  validateNum (rule, value, callback) {
-    let numZimu = /^[0-9]*$/g
-    let format = numZimu.test(value)
-    if (!format) {
-      callback(new Error('只能输入数字'))
-    } else {
-      callback()
-    }
-  },
-
-  /* 4位数验证码验证 */
-  validateSixNum (rule, value, callback) {
-    let numZimu = /^\d{4}$/g
-    let format = numZimu.test(value)
-    if (!format) {
-      callback(new Error('验证码应该为4位数字'))
-    } else {
-      callback()
-    }
-  },
-
-  /* 手机号码或者电话号码验证 */
-  validatephone (rule, value, callback) {
-    let mobile = /^1[3|5|7|8]\d{9}$/
-    let phone = /^0\d{2,3}-?\d{7,8}$/
-    let format = mobile.test(value) || phone.test(value)
-    if (!format) {
-      callback(new Error('请输入正确号码'))
-    } else {
-      callback()
-    }
-  },
-
-  /* 网址地址验证 */
-  validaWww (rule, value, callback) {
-    let mobile = /\b(([\w-]+:\/\/?|www[.])[^\s()<>]+(?:[\w\d]+|([^[:punct:]\s]|\/)))/
-    let format = mobile.test(value)
-    if (!format) {
-      callback(new Error('网址输入格式不正确'))
-    } else {
-      callback()
-    }
-  },
-
-  /* 邮箱地址输入验证 */
-  validaEmails (rule, value, callback) {
-    let email = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/
-    let format = email.test(value)
-    if (!format) {
-      callback(new Error('邮件输入格式不正确'))
-    } else {
-      callback()
-    }
-  },
-
-  /* 编码输入验证 */
-  validateCode (rule, value, callback) {
-    let email = /^[A-Za-z]{1,9}-?\d{0,9}$/
-    let format = email.test(value)
-    if (!format) {
-      callback(new Error('编码输入格式不正确'))
-    } else {
-      callback()
+  exitScreen () {
+    if (document.exitFullscreen) {
+      document.exitFullscreen()
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen()
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen()
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen()
     }
   }
 }
